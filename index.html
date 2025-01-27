@@ -12,90 +12,105 @@
 <body>
     <header>
         <div class="navbar">
-            <h1><img src="profile.png" alt="Samantha  Masara" class="profile-img"> Samantha Tuso Masara</h1>
+            <h1>
+                <img src="profile.png" alt="Samantha Masara" class="profile-img"> Samantha Tuso Masara
+            </h1>
             <nav>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#cv">CV</a>
-                <a href="#contact">Contact</a>
+                <div class="menu">
+                    <a href="#about"> </i> About</a>
+                    <a href="#what-i-can-do"> Skills </a>
+                    <a href="#projects"> Projects</a>
+                    <a href="#cv"> CV</a>
+                    <a href="#contact"> Contact</a>                  
+                </div>
             </nav>
+           <!-- <button id="theme-toggle" class="theme-btn">
+                <i class="fas fa-sun"></i> 
+            </button>  -->
         </div>
     </header>
 
     <section id="about" class="about">
-        <h2>About</h2>
-        <p>I am a highly motivated BCom Honours in Informatics student at the University of Pretoria. With strong communication, problem-solving skills, and a passion for technology, I am eager to apply my knowledge and gain industry experience. I am fluent in English and thrive in team environments, always willing to learn and adapt.</p>
+        <h2><i class="fas fa-user fa-bounce"></i> Welcome to my Page!</h2>
+        <p>
+         I’m Samantha Masara—an aspiring front-end developer with a solid foundation in Informatics and a creative streak inspired by platforms like Pinterest. I love the intersection of technology and design, and I’m passionate about creating visually stunning and functional user experiences. I’m eager to learn, explore, and grow in the ever-evolving tech industry!
+        </p>
     </section>
-
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-      <div class="skills-container">
-            <!-- Hard Skills Section -->
+    
+    <section id="what-i-can-do" class="what-i-can-do">
+        <h2><i class="fas fa-tools fa-shake"></i> What I Can Do</h2>
+        
+        <div class="skills-container">
             <div class="skills-column">
-                <h3>Hard Skills</h3>
+                <h3>Front-End Development</h3>
                 <ul>
-                    <li><i class="fas fa-code"></i> Programming Languages</li>
-                    <li><i class="fas fa-laptop-code"></i> Web Development</li>
-                    <li><i class="fas fa-database"></i> Data Analysis</li>
-                    <li><i class="fas fa-cogs"></i> Software Development</li>
+                    <li><i class="fas fa-paint-brush"></i> HTML, CSS, Angular</li>
+                    <li><i class="fas fa-pencil-ruler"></i> Figma & UI/UX Design</li>
                 </ul>
             </div>
-
-            <!-- Soft Skills Section -->
+            
             <div class="skills-column">
-                <h3>Soft Skills</h3>
+                <h3>Back-End & Databases</h3>
                 <ul>
-                    <li><i class="fas fa-comments"></i> Communication</li>
-                    <li><i class="fas fa-users"></i> Teamwork</li>
-                    <li><i class="fas fa-lightbulb"></i> Problem Solving</li>
-                    <li><i class="fas fa-bullhorn"></i> Leadership</li>
+                    <li><i class="fas fa-database"></i> MSSQL</li>
+                    <li><i class="fas fa-code"></i> ASP.NET (C#)</li>
                 </ul>
             </div>
         </div>
     </section>
+    
+    
 
     <section id="projects" class="projects">
-        <h2>Projects</h2>
+        <h2><i class="fas fa-folder-open fa-flip"></i> Projects</h2>
         <div class="projects-list">
+            
             <div class="project-card">
-                <h3>Project Name 1</h3>
-                <p>Description of the project goes here. Highlight key features or technologies used.</p>
+                <h3>Course Management System</h3>
+                <p>
+                    A full-stack web application for managing courses, built with Angular and .NET 6 Web API, using SQL Server for data storage.
+                </p>
+                <ul>
+                    <li>CRUD functionality (Create, Read, Update, Delete)</li>
+                    <li>Angular routing for seamless navigation</li>
+                    <li>Course listing, editing, and adding capabilities</li>
+                </ul>
+         <!-- <a href="https://github.com/your-github-repo" target="_blank" class="btn">View on GitHub</a>
+                <a href="https://your-live-demo.com" target="_blank" class="btn">Live Demo</a>  -->
             </div>
+    
             <div class="project-card">
-                <h3>Project Name 2</h3>
-                <p>Description of the project goes here. Highlight key features or technologies used.</p>
+                <h3>Inventory Management System</h3>
+                <p>
+                    A product inventory system with user authentication, featuring login/registration, product management, and sorting/filtering.
+                </p>
+                <ul>
+                    <li>Secure user authentication with password hashing</li>
+                    <li>Product sorting, filtering, and pagination</li>
+                    <li>Role-based navigation and restricted access</li>
+                </ul>
+         <!-- <a href="https://github.com/your-github-repo" target="_blank" class="btn">View on GitHub</a>
+                <a href="https://your-live-demo.com" target="_blank" class="btn">Live Demo</a>  -->
             </div>
         </div>
-    </section>
-
-    <section id="cv" class="cv">
-        <h2>Curriculum Vitae</h2>
-        <p>Click below to view and download my CV:</p>
-        <a href="Samantha  Masara CV.pdf" class="cv-link" download>Download CV</a>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>
-            <i class="fas fa-envelope"></i> 
-            <a href="mailto:samymasara@gmail.com">samymasara@gmail.com</a>
-        </p>
-        <p>
-            <i class="fab fa-linkedin"></i> 
-            <a href="https://www.linkedin.com/in/samantha-masara-296240217">View Profile</a>
-        </p>
-    <!--  <p>
-            <i class="fas fa-phone"></i> 
-            +27 763282210
-        </p> -->  
     </section>
     
 
+    <section id="cv" class="cv">
+        <h2><i class="fas fa-file-alt fa-pulse"></i> Curriculum Vitae</h2>
+        <p>Click below to view and download my CV:</p>
+        <a href="Samantha Tuso Masara CV.pdf" class="cv-link" download>Download CV</a>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2><i class="fas fa-envelope fa-fade"></i> Contact</h2>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:samymasara@gmail.com">samymasara@gmail.com</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/samantha-masara-296240217">View Profile</a></p>
+    </section>
+    
     <footer>
         <p>&copy; 2025 Samantha Masara. All Rights Reserved.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
