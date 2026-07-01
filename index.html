@@ -3,114 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samantha Masara</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Primary meta -->
+    <title>Samantha Masara — Junior Developer &amp; Information Systems Graduate</title>
+    <meta name="description" content="Samantha Masara — Information Systems graduate and Junior Developer working across the full product lifecycle. React, React Native, Angular, C# &amp; SQL. View selected projects and get in touch.">
+    <meta name="author" content="Samantha Tuso Masara">
+    <link rel="canonical" href="https://portfolio-website-xi-inky.vercel.app/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Samantha Masara — Junior Developer &amp; Information Systems Graduate">
+    <meta property="og:description" content="Information Systems graduate and Junior Developer working across the full product lifecycle. React, React Native, Angular, C# &amp; SQL.">
+    <meta property="og:url" content="https://portfolio-website-xi-inky.vercel.app/">
+    <meta property="og:image" content="https://portfolio-website-xi-inky.vercel.app/profile.jpg">
+    <meta property="og:image:alt" content="Portrait of Samantha Masara">
+    <meta property="og:site_name" content="Samantha Masara">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Samantha Masara — Junior Developer &amp; Information Systems Graduate">
+    <meta name="twitter:description" content="Information Systems graduate and Junior Developer working across the full product lifecycle. React, React Native, Angular, C# &amp; SQL.">
+    <meta name="twitter:image" content="https://portfolio-website-xi-inky.vercel.app/profile.jpg">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Samantha Tuso Masara",
+      "jobTitle": "Junior Developer",
+      "description": "Information Systems graduate and Junior Developer working across the full product lifecycle.",
+      "url": "https://portfolio-website-xi-inky.vercel.app/",
+      "image": "https://portfolio-website-xi-inky.vercel.app/profile.jpg",
+      "email": "samymasara@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/samantha-masara-296240217",
+        "https://github.com/Samantha-fd"
+      ],
+      "knowsAbout": ["React", "React Native", "Angular", "REST APIs", "C#", "ASP.NET", "SQL", "PostgreSQL", "Agile Delivery"]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Mobile nav overlay -->
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+        <button class="mobile-close" id="mobile-close" aria-label="Close menu">
+            <span></span><span></span>
+        </button>
+        <nav class="mobile-nav-links">
+            <a href="#about">About</a>
+            <a href="#what-i-can-do">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <p class="mobile-nav-foot">Samantha Tuso Masara &copy; 2026</p>
+    </div>
+
+    <!-- Scroll rail -->
+    <div class="scroll-rail" aria-hidden="true">
+        <div class="scroll-rail-fill"></div>
+        <span class="rail-dot" data-target="about"></span>
+        <span class="rail-dot" data-target="what-i-can-do"></span>
+        <span class="rail-dot" data-target="projects"></span>
+        <span class="rail-dot" data-target="contact"></span>
+    </div>
+
     <header>
         <div class="navbar">
             <h1>
-                <img src="profile.png" alt="Samantha Masara" class="profile-img"> Samantha Tuso Masara
+                <img src="profile.jpg" alt="Samantha Masara" class="profile-img">
+                Samantha Tuso Masara
             </h1>
             <nav>
                 <div class="menu">
-                    <a href="#about"> </i> About</a>
-                    <a href="#what-i-can-do"> Skills </a>
-                    <a href="#projects"> Projects</a>
-                    <a href="#cv"> CV</a>
-                    <a href="#contact"> Contact</a>                  
+                    <a href="#about">About</a>
+                    <a href="#what-i-can-do">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </nav>
-           <!-- <button id="theme-toggle" class="theme-btn">
-                <i class="fas fa-sun"></i> 
-            </button>  -->
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
+    <!-- About / Hero -->
     <section id="about" class="about">
-        <h2><i class="fas fa-user fa-bounce"></i> Welcome to my Page!</h2>
-        <p>
-         I’m Samantha Masara—an aspiring front-end developer with a solid foundation in Informatics and a creative streak inspired by platforms like Pinterest. I love the intersection of technology and design, and I’m passionate about creating visually stunning and functional user experiences. I’m eager to learn, explore, and grow in the ever-evolving tech industry!
-        </p>
+        <div class="about-content">
+            <p class="eyebrow float-in"><span>01</span> About</p>
+            <h2 class="float-in"><span class="h2-light">Greetings,</span><br><em>I'm Samantha</em></h2>
+            <p class="about-body float-in">
+                Information Systems graduate and Junior Developer with hands-on experience across the full
+                product lifecycle — from requirements and design to deployment and continuous improvement.
+                I work at the intersection of technology and people, translating complex needs into
+                digital solutions that are both functional and considered.
+            </p>
+        </div>
+        <div class="about-image float-in">
+            <img src="profile.jpg" alt="Portrait of Samantha Masara, Junior Developer" class="about-photo">
+        </div>
     </section>
-    
+
+    <!-- Marquee ticker -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>React &amp; React Native</span><span class="mx">✦</span>
+            <span>Angular</span><span class="mx">✦</span>
+            <span>REST API Integration</span><span class="mx">✦</span>
+            <span>Git &amp; CI/CD</span><span class="mx">✦</span>
+            <span>SQL &amp; PostgreSQL</span><span class="mx">✦</span>
+            <span>Agile Delivery</span><span class="mx">✦</span>
+            <span>C# &amp; ASP.NET</span><span class="mx">✦</span>
+            <span>Stakeholder Engagement</span><span class="mx">✦</span>
+            <span>React &amp; React Native</span><span class="mx">✦</span>
+            <span>Angular</span><span class="mx">✦</span>
+            <span>REST API Integration</span><span class="mx">✦</span>
+            <span>Git &amp; CI/CD</span><span class="mx">✦</span>
+            <span>SQL &amp; PostgreSQL</span><span class="mx">✦</span>
+            <span>Agile Delivery</span><span class="mx">✦</span>
+            <span>C# &amp; ASP.NET</span><span class="mx">✦</span>
+            <span>Stakeholder Engagement</span><span class="mx">✦</span>
+        </div>
+    </div>
+
+    <!-- Skills -->
     <section id="what-i-can-do" class="what-i-can-do">
-        <h2><i class="fas fa-tools fa-shake"></i> What I Can Do</h2>
-        
+        <p class="eyebrow float-in"><span>02</span> Skills</p>
+        <h2 class="float-in">What I<br><em>Can Do</em></h2>
         <div class="skills-container">
-            <div class="skills-column">
-                <h3>Front-End Development</h3>
+            <div class="skills-column float-in">
+                <h3>Development</h3>
                 <ul>
-                    <li><i class="fas fa-paint-brush"></i> HTML, CSS, Angular</li>
-                    <li><i class="fas fa-pencil-ruler"></i> Figma & UI/UX Design</li>
+                    <li>React &amp; React Native</li>
+                    <li>Angular</li>
+                    <li>REST API Integration</li>
+                    <li>Git &amp; CI/CD</li>
+                    <li>HTML &amp; CSS</li>
                 </ul>
             </div>
-            
-            <div class="skills-column">
-                <h3>Back-End & Databases</h3>
+            <div class="skills-column float-in">
+                <h3>Data &amp; Backend</h3>
                 <ul>
-                    <li><i class="fas fa-database"></i> MSSQL</li>
-                    <li><i class="fas fa-code"></i> ASP.NET (C#)</li>
+                    <li>SQL &amp; PostgreSQL</li>
+                    <li>Microsoft SQL Server</li>
+                    <li>C# &amp; ASP.NET</li>
+                </ul>
+            </div>
+            <div class="skills-column float-in">
+                <h3>Professional</h3>
+                <ul>
+                    <li>Requirements Analysis</li>
+                    <li>Agile Delivery</li>
+                    <li>Stakeholder Engagement</li>
+                    <li>Technical Documentation</li>
+                    <li>Product Lifecycle Support</li>
                 </ul>
             </div>
         </div>
     </section>
-    
-    
 
+    <!-- Projects -->
     <section id="projects" class="projects">
-        <h2><i class="fas fa-folder-open fa-flip"></i> Projects</h2>
+        <p class="eyebrow float-in"><span>03</span> Work</p>
+        <h2 class="float-in">Selected<br><em>Projects</em></h2>
         <div class="projects-list">
-            
-            <div class="project-card">
-                <h3>Course Management System</h3>
+            <div class="project-card float-in">
+                <p class="project-num">01</p>
+                <h3>Capstone Information System</h3>
                 <p>
-                    A full-stack web application for managing courses, built with Angular and .NET 6 Web API, using SQL Server for data storage.
+                    Led a team of five to deliver a client-facing information system from requirements
+                    through to deployment — coordinating design, database architecture, and stakeholder
+                    alignment throughout.
                 </p>
                 <ul>
-                    <li>CRUD functionality (Create, Read, Update, Delete)</li>
-                    <li>Angular routing for seamless navigation</li>
-                    <li>Course listing, editing, and adding capabilities</li>
+                    <li>Angular, C#, Microsoft SQL Server</li>
+                    <li>System design, database architecture &amp; testing</li>
+                    <li>Stakeholder presentations &amp; requirements analysis</li>
                 </ul>
-         <!-- <a href="https://github.com/your-github-repo" target="_blank" class="btn">View on GitHub</a>
-                <a href="https://your-live-demo.com" target="_blank" class="btn">Live Demo</a>  -->
             </div>
-    
-            <div class="project-card">
-                <h3>Inventory Management System</h3>
+            <div class="project-card float-in">
+                <p class="project-num">02</p>
+                <h3>Web &amp; Mobile Applications</h3>
                 <p>
-                    A product inventory system with user authentication, featuring login/registration, product management, and sorting/filtering.
+                    At Index eSolutions, contributed across the full product lifecycle — designing,
+                    building, and maintaining web and mobile applications with a focus on performance
+                    and reliability.
                 </p>
                 <ul>
-                    <li>Secure user authentication with password hashing</li>
-                    <li>Product sorting, filtering, and pagination</li>
-                    <li>Role-based navigation and restricted access</li>
+                    <li>React, React Native &amp; Angular</li>
+                    <li>REST API integration &amp; backend services</li>
+                    <li>SQL &amp; PostgreSQL query optimisation</li>
                 </ul>
-         <!-- <a href="https://github.com/your-github-repo" target="_blank" class="btn">View on GitHub</a>
-                <a href="https://your-live-demo.com" target="_blank" class="btn">Live Demo</a>  -->
             </div>
         </div>
     </section>
-    
 
-    <section id="cv" class="cv">
-        <h2><i class="fas fa-file-alt fa-pulse"></i> Curriculum Vitae</h2>
-        <p>Click below to view and download my CV:</p>
-        <a href="Samantha T Masara CV.pdf" class="cv-link" download>Download CV</a>
-    </section>
-
+    <!-- Contact -->
     <section id="contact" class="contact">
-        <h2><i class="fas fa-envelope fa-fade"></i> Contact</h2>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:samymasara@gmail.com">samymasara@gmail.com</a></p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/samantha-masara-296240217">View Profile</a></p>
+        <p class="eyebrow float-in"><span>04</span> Contact</p>
+        <h2 class="float-in">Get in<br><em>Touch</em></h2>
+        <div class="contact-links">
+            <a class="contact-item float-in" href="mailto:samymasara@gmail.com">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">samymasara@gmail.com</span>
+            </a>
+            <a class="contact-item float-in" href="https://www.linkedin.com/in/samantha-masara-296240217" target="_blank" rel="noopener">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">Samantha Masara</span>
+            </a>
+            <a class="contact-item float-in" href="https://github.com/Samantha-fd" target="_blank" rel="noopener">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">Samantha-fd</span>
+            </a>
+            <a class="contact-item float-in" href="Samantha T Masara CV.pdf" download>
+                <span class="contact-label">Résumé</span>
+                <span class="contact-value">Download CV</span>
+            </a>
+        </div>
     </section>
-    
+
     <footer>
-        <p>&copy; 2025 Samantha Masara. All Rights Reserved.</p>
+        <div class="footer-inner">
+            <p class="footer-copy">&copy; 2026 Samantha Masara</p>
+            <p class="footer-tagline">Front-End Developer &amp; Designer</p>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

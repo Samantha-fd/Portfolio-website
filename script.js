@@ -1,114 +1,132 @@
-
-// Smooth scrolling with offset adjustment
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        const offset = 200; // Adjust based on your header's height
-        const targetPosition = target.offsetTop - offset;
-
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar a");
-
-    function updateActiveSection() {
-        let scrollPosition = window.scrollY;
-
-        sections.forEach(section => {
-            const top = section.offsetTop - 100; // Adjust offset for better visibility
-            const height = section.offsetHeight;
-            
-            if (scrollPosition >= top && scrollPosition < top + height) {
-                sections.forEach(sec => sec.classList.remove("active"));
-                section.classList.add("active");
-            }
-        });
-    }
-
-    window.addEventListener("scroll", updateActiveSection);
-
-    navLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
-
-            window.scrollTo({
-                top: targetSection.offsetTop - 50, // Adjust offset for better preview
-                behavior: "smooth"
-            });
-        });
-    });
-
-    updateActiveSection(); // Set initial state
-});
-
-
-// AOS animation initialization
-AOS.init();
-
-// Toggle menu for smaller screens
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-
-menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Get the theme toggle button and current theme
+// ── Theme Toggle ──
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Check for saved theme in localStorage
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  body.classList.add(savedTheme); // Apply saved theme
-  updateButtonIcon(savedTheme); // Update button icon
+if (localStorage.getItem('theme') === 'light-theme') {
+  body.classList.add('light-theme');
+  themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
 }
 
-// Add event listener to the toggle button
 themeToggle.addEventListener('click', () => {
-  const isDarkTheme = body.classList.contains('dark-theme');
-  const newTheme = isDarkTheme ? 'light-theme' : 'dark-theme';
-
-  // Update the body class
-  body.classList.remove(isDarkTheme ? 'dark-theme' : 'light-theme');
-  body.classList.add(newTheme);
-
-  // Save the new theme to localStorage
-  localStorage.setItem('theme', newTheme);
-
-  // Update the button icon
-  updateButtonIcon(newTheme);
+  const isLight = body.classList.toggle('light-theme');
+  const icon = themeToggle.querySelector('i');
+  icon.classList.toggle('fa-sun', !isLight);
+  icon.classList.toggle('fa-moon', isLight);
+  localStorage.setItem('theme', isLight ? 'light-theme' : 'dark-theme');
 });
 
-// Function to update the button icon
-function updateButtonIcon(theme) {
-  const icon = themeToggle.querySelector('i');
-  if (theme === 'dark-theme') {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-  } else {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+// ── Mobile Nav ──
+const hamburger   = document.getElementById('hamburger');
+const overlay     = document.getElementById('mobile-overlay');
+const mobileClose = document.getElementById('mobile-close');
+
+function openMobileNav() {
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', openMobileNav);
+mobileClose.addEventListener('click', closeMobileNav);
+
+overlay.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+
+window.addEventListener('scroll', onScroll, { passive: true });
+
+// ── Smooth anchor scroll ──
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    const to = Math.max(0, target.offsetTop - 70);
+    window.scrollTo({ top: to, behavior: 'smooth' });
+    closeMobileNav();
+  });
+});
+
+// ── Scroll Rail + Active Nav ──
+const railFill = document.querySelector('.scroll-rail-fill');
+const railDots = document.querySelectorAll('.rail-dot');
+const sections = [...document.querySelectorAll('section')];
+const navLinks = document.querySelectorAll('.navbar .menu a');
+const aboutContent = document.querySelector('.about-content');
+
+function positionRailDots() {
+  const totalH = document.documentElement.scrollHeight - window.innerHeight;
+  if (totalH <= 0) return;
+  railDots.forEach(dot => {
+    const sec = document.getElementById(dot.dataset.target);
+    if (!sec) return;
+    const pct = (sec.offsetTop - window.innerHeight * 0.5) / totalH * 100;
+    dot.style.top = Math.max(2, Math.min(98, pct)) + '%';
+  });
+}
+
+function onScroll() {
+  const scrollY  = window.scrollY;
+  const totalH   = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = totalH > 0 ? scrollY / totalH : 0;
+
+  if (railFill) railFill.style.height = (progress * 100) + '%';
+
+  let currentId = '';
+  sections.forEach(sec => {
+    if (scrollY >= sec.offsetTop - window.innerHeight * 0.5) currentId = sec.id;
+  });
+
+  railDots.forEach(dot => dot.classList.toggle('active', dot.dataset.target === currentId));
+  navLinks.forEach(link => {
+    link.classList.toggle('nav-active', link.getAttribute('href') === '#' + currentId);
+  });
+
+  // Parallax watermark
+  if (aboutContent) {
+    aboutContent.style.setProperty('--parallax-y', `${scrollY * 0.15}px`);
   }
 }
 
+// Click rail dots to navigate
+railDots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    const sec = document.getElementById(dot.dataset.target);
+    if (!sec) return;
+    const to = Math.max(0, sec.offsetTop - 70);
+    window.scrollTo({ top: to, behavior: 'smooth' });
+  });
+});
+
+window.addEventListener('resize', positionRailDots);
+positionRailDots();
+onScroll();
+
+// ── Float-in via IntersectionObserver ──
+const floatObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      floatObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.float-in').forEach(el => floatObserver.observe(el));
+
+// ── Section in-view (heading underline animation) ──
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle('in-view', entry.isIntersecting);
+  });
+}, { threshold: 0.15 });
+
+sections.forEach(s => sectionObserver.observe(s));
