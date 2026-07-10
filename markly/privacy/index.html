@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Markly — Privacy Policy</title>
+    <meta name="description" content="Privacy policy for Markly, the logo-stamping app. Markly does not collect, store, or share any personal data — everything happens on your device.">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://portfolio-website-xi-inky.vercel.app/markly/privacy">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #1C1920;
+            --text: #F2EDE6;
+            --muted: #B8B0A6;
+            --accent: #9E2A2B;
+            --hairline: rgba(242, 237, 230, 0.14);
+        }
+        body.light-theme {
+            --bg: #F2EDE6;
+            --text: #1C1920;
+            --muted: #5C564E;
+            --accent: #7D1F20;
+            --hairline: rgba(28, 25, 32, 0.14);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: clamp(48px, 10vw, 96px) 24px 64px;
+        }
+        .eyebrow {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(40px, 7vw, 64px);
+            line-height: 1.05;
+            margin-bottom: 8px;
+        }
+        .updated {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+        section {
+            border-top: 1px solid var(--hairline);
+            margin-top: 40px;
+            padding-top: 32px;
+        }
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        p { color: var(--muted); font-size: 15px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back {
+            display: inline-block;
+            margin-top: 56px;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="eyebrow">Markly · Legal</p>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: 3 July 2026</p>
+
+        <section>
+            <h2>The short version</h2>
+            <p>
+                Markly does not collect, store, or share any of your personal data.
+                Everything the app does happens entirely on your phone.
+            </p>
+        </section>
+
+        <section>
+            <h2>Your photos and logos</h2>
+            <p>
+                Markly asks for photo access so you can pick pictures to turn into
+                logos and to stamp your logos onto photos. Logos and stamped photos
+                you save are stored only on your device, inside the app and in your
+                gallery. They are never uploaded anywhere — Markly has no servers
+                and makes no internet connections with your images.
+            </p>
+        </section>
+
+        <section>
+            <h2>Sharing</h2>
+            <p>
+                When you use the Share button, your photo is handed to the app you
+                choose (for example WhatsApp or Instagram). From that point the
+                receiving app's own privacy policy applies.
+            </p>
+        </section>
+
+        <section>
+            <h2>Accounts and tracking</h2>
+            <p>
+                Markly has no user accounts, no sign-in, no advertising, and no
+                analytics or tracking of any kind.
+            </p>
+        </section>
+
+        <section>
+            <h2>Deleting your data</h2>
+            <p>
+                All of Markly's data lives on your device. Deleting a logo or
+                stamped photo inside the app removes it permanently, and
+                uninstalling the app removes everything the app stored. Photos you
+                saved to your gallery remain in your gallery until you delete them
+                there.
+            </p>
+        </section>
+
+        <section>
+            <h2>Children</h2>
+            <p>
+                Markly does not knowingly collect any information from anyone,
+                including children — because it collects no information at all.
+            </p>
+        </section>
+
+        <section>
+            <h2>Changes and contact</h2>
+            <p>
+                If this policy ever changes, the updated version will appear on
+                this page with a new date. Questions are welcome at
+                <a href="mailto:samymasara@gmail.com">samymasara@gmail.com</a>.
+            </p>
+        </section>
+
+        <a class="back" href="/">← Back to portfolio</a>
+    </main>
+
+    <script>
+        if (localStorage.getItem('theme') === 'light-theme') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+</body>
+</html>
