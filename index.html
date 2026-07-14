@@ -181,33 +181,109 @@
         <p class="eyebrow float-in"><span>03</span> Work</p>
         <h2 class="float-in">Selected<br><em>Projects</em></h2>
         <div class="projects-list">
-            <div class="project-card float-in">
-                <p class="project-num">01</p>
-                <h3>Capstone Information System</h3>
-                <p>
-                    Led a team of five to deliver a client-facing information system from requirements
-                    through to deployment — coordinating design, database architecture, and stakeholder
-                    alignment throughout.
-                </p>
-                <ul>
-                    <li>Angular, C#, Microsoft SQL Server</li>
-                    <li>System design, database architecture &amp; testing</li>
-                    <li>Stakeholder presentations &amp; requirements analysis</li>
-                </ul>
+            <div class="project-card float-in" tabindex="0" role="button" aria-pressed="false" aria-label="Freezer — flip for details">
+                <div class="card-inner">
+                    <div class="card-face card-front">
+                        <span class="flip-hint"><i class="fas fa-rotate"></i> Details</span>
+                        <p class="project-num">01</p>
+                        <h3>Freezer</h3>
+                        <p>
+                            An Android utility that freezes apps at the OS level — no root required.
+                            Uses Shizuku as a privilege bridge to call Android's real package-disable
+                            API, so frozen apps stop running, draining battery, and sending notifications.
+                        </p>
+                    </div>
+                    <div class="card-face card-back">
+                        <span class="flip-hint"><i class="fas fa-rotate-left"></i> Back</span>
+                        <h3>Tech Stack</h3>
+                        <ul>
+                            <li>Kotlin &amp; Jetpack Compose</li>
+                            <li>Shizuku API for privileged OS calls</li>
+                            <li>Clean architecture — Repository, ViewModel, UI</li>
+                            <li>Reactive state via StateFlow</li>
+                        </ul>
+                        <a class="card-btn" href="https://github.com/Samantha-fd/Freezer" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="project-card float-in">
-                <p class="project-num">02</p>
-                <h3>Web &amp; Mobile Applications</h3>
-                <p>
-                    At Index eSolutions, contributed across the full product lifecycle — designing,
-                    building, and maintaining web and mobile applications with a focus on performance
-                    and reliability.
-                </p>
-                <ul>
-                    <li>React, React Native &amp; Angular</li>
-                    <li>REST API integration &amp; backend services</li>
-                    <li>SQL &amp; PostgreSQL query optimisation</li>
-                </ul>
+            <div class="project-card float-in" tabindex="0" role="button" aria-pressed="false" aria-label="Markly — flip for details">
+                <div class="card-inner">
+                    <div class="card-face card-front">
+                        <span class="flip-hint"><i class="fas fa-rotate"></i> Details</span>
+                        <p class="project-num">02</p>
+                        <h3>Markly <span class="card-badge">Coming Soon</span></h3>
+                        <p>
+                            A privacy-first Android app currently in closed development —
+                            details under wraps until launch. Coming soon to Google Play.
+                        </p>
+                    </div>
+                    <div class="card-face card-back">
+                        <span class="flip-hint"><i class="fas fa-rotate-left"></i> Back</span>
+                        <h3>Tech Stack</h3>
+                        <ul>
+                            <li>React Native &amp; Expo (TypeScript)</li>
+                            <li>React Native Skia rendering</li>
+                            <li>Expo Router navigation</li>
+                            <li>Fully offline — zero data collection</li>
+                        </ul>
+                        <div class="card-actions">
+                            <span class="card-btn card-btn-disabled" aria-disabled="true">
+                                <i class="fas fa-lock"></i> Private — Coming Soon
+                            </span>
+                            <a class="card-btn" href="markly/privacy/" target="_blank" rel="noopener">
+                                <i class="fas fa-shield-halved"></i> Privacy Policy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card float-in" tabindex="0" role="button" aria-pressed="false" aria-label="Capstone Information System — flip for details">
+                <div class="card-inner">
+                    <div class="card-face card-front">
+                        <span class="flip-hint"><i class="fas fa-rotate"></i> Details</span>
+                        <p class="project-num">03</p>
+                        <h3>Capstone Information System</h3>
+                        <p>
+                            Led a team of five to deliver a client-facing information system from requirements
+                            through to deployment — coordinating design, database architecture, and stakeholder
+                            alignment throughout.
+                        </p>
+                    </div>
+                    <div class="card-face card-back">
+                        <span class="flip-hint"><i class="fas fa-rotate-left"></i> Back</span>
+                        <h3>Highlights</h3>
+                        <ul>
+                            <li>Angular, C#, Microsoft SQL Server</li>
+                            <li>System design, database architecture &amp; testing</li>
+                            <li>Stakeholder presentations &amp; requirements analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card float-in" tabindex="0" role="button" aria-pressed="false" aria-label="Web and Mobile Applications — flip for details">
+                <div class="card-inner">
+                    <div class="card-face card-front">
+                        <span class="flip-hint"><i class="fas fa-rotate"></i> Details</span>
+                        <p class="project-num">04</p>
+                        <h3>Web &amp; Mobile Applications</h3>
+                        <p>
+                            At Index eSolutions, contributed across the full product lifecycle — designing,
+                            building, and maintaining web and mobile applications with a focus on performance
+                            and reliability.
+                        </p>
+                    </div>
+                    <div class="card-face card-back">
+                        <span class="flip-hint"><i class="fas fa-rotate-left"></i> Back</span>
+                        <h3>Highlights</h3>
+                        <ul>
+                            <li>React, React Native &amp; Angular</li>
+                            <li>REST API integration &amp; backend services</li>
+                            <li>SQL &amp; PostgreSQL query optimisation</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
