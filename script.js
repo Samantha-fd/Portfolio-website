@@ -60,7 +60,6 @@ const railFill = document.querySelector('.scroll-rail-fill');
 const railDots = document.querySelectorAll('.rail-dot');
 const sections = [...document.querySelectorAll('section')];
 const navLinks = document.querySelectorAll('.navbar .menu a');
-const aboutContent = document.querySelector('.about-content');
 
 function positionRailDots() {
   const totalH = document.documentElement.scrollHeight - window.innerHeight;
@@ -89,11 +88,6 @@ function onScroll() {
   navLinks.forEach(link => {
     link.classList.toggle('nav-active', link.getAttribute('href') === '#' + currentId);
   });
-
-  // Parallax watermark
-  if (aboutContent) {
-    aboutContent.style.setProperty('--parallax-y', `${scrollY * 0.15}px`);
-  }
 }
 
 // Click rail dots to navigate

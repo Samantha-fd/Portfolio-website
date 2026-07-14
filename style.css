@@ -353,6 +353,19 @@ h2 em {
   color: var(--accent);
 }
 
+/* Role line under the hero heading */
+h2 .h2-role {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.16em;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1.4em;
+}
+
 /* Editorial mixed-weight heading — lighter first line */
 h2 .h2-light {
   font-weight: 400;
@@ -416,27 +429,6 @@ h3 {
 
 .about-content { flex: 1; min-width: 0; position: relative; z-index: 1; }
 
-/* Watermark */
-.about-content::before {
-  content: 'Samantha';
-  position: absolute;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(70px, 16vw, 200px);
-  font-weight: 600;
-  font-style: italic;
-  color: var(--text);
-  opacity: 0.03;
-  top: calc(50% + var(--parallax-y, 0px));
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 0;
-  letter-spacing: -0.03em;
-  user-select: none;
-  will-change: top;
-}
-
 .about-image {
   flex-shrink: 0;
   width: clamp(180px, 22vw, 320px);
@@ -497,39 +489,6 @@ h3 {
 @keyframes scrollDrop {
   0%   { top: -100%; }
   100% { top:  100%; }
-}
-
-/* ── Marquee ── */
-.marquee {
-  overflow: hidden;
-  border-top: 1px solid var(--border-sub);
-  border-bottom: 1px solid var(--border-sub);
-  padding: 1.1rem 0;
-  background: var(--bg);
-  transition: background 0.4s ease;
-}
-
-.marquee-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 2rem;
-  white-space: nowrap;
-  animation: marquee 28s linear infinite;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.marquee-track .mx {
-  color: var(--accent);
-  font-size: 0.5rem;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
 }
 
 /* ── Skills ── */
