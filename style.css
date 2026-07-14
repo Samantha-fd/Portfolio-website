@@ -576,11 +576,15 @@ h3 {
 }
 
 .project-card {
-  background: var(--bg-card);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
   color: var(--text);
   position: relative;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  perspective: 1400px;
+}
+
+.project-card:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .project-card::after {
@@ -590,10 +594,121 @@ h3 {
   width: 0; height: 1px;
   background: var(--accent);
   transition: width 0.45s ease;
+  z-index: 2;
 }
 
 .project-card:hover::after { width: 100%; }
-.project-card:hover { background: var(--bg-raised); }
+
+/* Flip mechanics — faces stacked in one grid cell so the card
+   is as tall as its tallest face */
+.card-inner {
+  display: grid;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card.flipped .card-inner { transform: rotateY(180deg); }
+
+.card-face {
+  grid-area: 1 / 1;
+  background: var(--bg-card);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease;
+}
+
+.project-card:hover .card-face { background: var(--bg-raised); }
+
+.card-back { transform: rotateY(180deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .card-inner { transition: none; }
+}
+
+/* Flip hint */
+.flip-hint {
+  position: absolute;
+  top: clamp(1.5rem, 3vw, 2.5rem);
+  right: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.7;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.project-card:hover .flip-hint {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* Coming-soon badge */
+.card-badge {
+  display: inline-block;
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.55rem;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Card action buttons */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.card-actions .card-btn { margin-top: 0; }
+
+.card-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.card-btn i { font-size: 0.85rem; }
+
+.card-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #EDE8E0;
+}
+
+.card-btn-disabled {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+
+.card-back ul { margin-bottom: 1.5rem; }
 
 .project-num {
   font-family: 'Cormorant Garamond', serif;

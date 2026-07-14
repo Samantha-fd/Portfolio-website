@@ -122,6 +122,26 @@ const floatObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.float-in').forEach(el => floatObserver.observe(el));
 
+// ── Project card flip ──
+document.querySelectorAll('.project-card').forEach(card => {
+  const toggleFlip = () => {
+    const flipped = card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed', flipped);
+  };
+
+  card.addEventListener('click', e => {
+    if (e.target.closest('a')) return; // let the GitHub link work
+    toggleFlip();
+  });
+
+  card.addEventListener('keydown', e => {
+    if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a')) {
+      e.preventDefault();
+      toggleFlip();
+    }
+  });
+});
+
 // ── Section in-view (heading underline animation) ──
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
