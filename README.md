@@ -10,7 +10,7 @@ Live sections: About · Skills · Projects · Contact
 
 ## Why
 
-Most portfolio templates feel generic or over-engineered. This one is hand-crafted from scratch, driven by editorial design references (think Vogue layouts, premium agency sites, film poster typography) to reflect a considered aesthetic — not just a skills checklist.
+Most portfolio templates feel generic or over-engineered. This one is driven by editorial design references (think Vogue layouts, premium agency sites, film poster typography) to reflect a considered aesthetic — not just a skills checklist.
 
 No framework overhead means instant load, zero build steps, and complete control over every pixel.
 
