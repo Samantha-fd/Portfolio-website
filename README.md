@@ -28,7 +28,7 @@ No framework overhead means instant load, zero build steps, and complete control
 - Parallax watermark text in the hero section
 - Full-screen mobile nav overlay with staggered link transitions
 - Responsive layout from 380px mobile to wide desktop
-- CV download link under Contact
+
 
 ## Tech Stack
 
